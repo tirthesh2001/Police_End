@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.ncrb_police.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_fir_record"
+        android:name="com.example.ncrb_police.ui.fir_record.fir_recordFragment"
+        android:label="FIR Reporting"
+        tools:layout="@layout/fragment_fir_record" />
+
+    <fragment
+        android:id="@+id/nav_crime_records"
+        android:name="com.example.ncrb_police.ui.crime_records.crime_recordsFragment"
+        android:label="Crime Records"
+        tools:layout="@layout/fragment_crime_records" />
+    <fragment
+        android:id="@+id/nav_beats"
+        android:name="com.example.ncrb_police.ui.beats.beatsFragment"
+        android:label="Beats"
+        tools:layout="@layout/fragment_crime_records" />
+    <fragment
+        android:id="@+id/nav_appointment"
+        android:name="com.example.ncrb_police.ui.appointment.appointmentFragment"
+        android:label="Appointments"
+        tools:layout="@layout/fragment_appointment" />
+</navigation>

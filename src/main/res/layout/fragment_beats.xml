@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/regular2"
+    tools:context=".ui.beats.beatsFragment">
+
+
+    <TextView
+        android:id="@+id/text_beats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:text="Beat Assignment Table"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginRight="286dp"
+        android:text="Select the area:"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_beats" />
+
+    <Spinner
+        android:id="@+id/main_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/text_beats"
+        app:layout_constraintStart_toEndOf="@+id/place"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="left" />
+
+    <Button
+        android:id="@+id/set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="293dp"
+        android:layout_marginLeft="293dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="521dp"
+        android:background="@drawable/gradiant_red"
+        android:text="Set"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_area" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/set"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/elements_red">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:text="Time Slot"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingHorizontal="20dp"
+                android:padding="5dp"
+                android:textSize="22sp"
+                android:layout_marginLeft="40dp"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:gravity="end|right"
+                android:padding="5dp"
+                android:paddingHorizontal="20dp"
+                android:text="Assign Officer"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradiant_blue_for_table">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:text="8:00 am"
+            android:textColor="@color/white"
+            android:paddingHorizontal="20dp"
+            android:padding="5dp"
+            android:textSize="22sp"
+            android:layout_marginLeft="30dp"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradiant_blue_for_table">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:text="11:30 am"
+                android:textColor="@color/white"
+                android:paddingHorizontal="20dp"
+                android:padding="5dp"
+                android:textSize="22sp"
+                android:layout_marginLeft="30dp"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradiant_blue_for_table">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:text="2:30 pm"
+                android:textColor="@color/white"
+                android:paddingHorizontal="20dp"
+                android:padding="5dp"
+                android:textSize="22sp"
+                android:layout_marginLeft="30dp"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradiant_blue_for_table">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:text="5:00 pm"
+                android:textColor="@color/white"
+                android:paddingHorizontal="20dp"
+                android:padding="5dp"
+                android:textSize="22sp"
+                android:layout_marginLeft="30dp"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradiant_blue_for_table">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:text="7:30 pm"
+                android:textColor="@color/white"
+                android:paddingHorizontal="20dp"
+                android:padding="5dp"
+                android:textSize="22sp"
+                android:layout_marginLeft="30dp"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradiant_blue_for_table">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:text="10:30 pm"
+                android:textColor="@color/white"
+                android:paddingHorizontal="20dp"
+                android:padding="5dp"
+                android:textSize="22sp"
+                android:layout_marginLeft="30dp"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradiant_blue_for_table">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:text="2:00 am"
+                android:textColor="@color/white"
+                android:paddingHorizontal="20dp"
+                android:padding="5dp"
+                android:textSize="22sp"
+                android:layout_marginLeft="30dp"/>
+
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
