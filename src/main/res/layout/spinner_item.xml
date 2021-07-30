@@ -7,4 +7,5 @@
     android:gravity="left"
     android:textColor="@color/white"
     android:padding="7dp"
+    android:background="@drawable/border_white"
     />

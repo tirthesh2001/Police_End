@@ -24,7 +24,7 @@ public class fir_recordFragment extends Fragment {
         binding = FragmentFirRecordBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
+        final TextView textView = binding.header2;
         return root;
     }
 

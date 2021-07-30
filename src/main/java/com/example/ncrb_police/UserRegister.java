@@ -107,6 +107,7 @@ public class UserRegister extends AppCompatActivity {
                                 public void onComplete(@NonNull @NotNull Task<Void> task) {
                                     if (task.isSuccessful()){
                                         Toast.makeText(UserRegister.this, "User Registered", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(UserRegister.this,PoliceLoginActivity.class));
                                     }else {
                                         Toast.makeText(UserRegister.this, "Task Unsuccessful!! Try Again!!", Toast.LENGTH_SHORT).show();
                                     }
