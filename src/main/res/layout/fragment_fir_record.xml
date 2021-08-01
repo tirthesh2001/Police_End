@@ -95,24 +95,78 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
-            <EditText
-                android:id="@+id/no_use1"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="50dp"
+                android:orientation="horizontal"
+                android:id="@+id/temp1">
+            <EditText
+                android:id="@+id/time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="50dp"
                 android:layout_marginTop="50dp"
-                android:background="@drawable/elements_red"
+                android:background="@drawable/left_element"
                 android:ems="12"
                 android:gravity="center"
-                android:hint="Date Picker Placeholder"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:padding="5dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
+                <Button
+                    android:id="@+id/set_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Set Time"
+                    android:layout_marginTop="48dp"
+                    android:background="@drawable/right_element"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/temp2">
+                <EditText
+                    android:id="@+id/date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/left_element"
+                    android:ems="12"
+                    android:gravity="center"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
+
+                <Button
+                    android:id="@+id/set_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Set Date"
+                    android:layout_marginTop="38dp"
+                    android:background="@drawable/right_element"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
             <EditText
-                android:id="@+id/no_use2"
+                android:id="@+id/add"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="50dp"
@@ -120,8 +174,28 @@
                 android:background="@drawable/elements_red"
                 android:ems="12"
                 android:gravity="center"
-                android:hint="Time Picker Placeholder"
-                android:inputType="textPersonName"
+                android:hint="Enter Locality"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/statement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/elements_red"
+                android:ems="12"
+                android:gravity="center"
+                android:hint="Enter Statement"
+                android:inputType="text|textMultiLine"
+                android:minLines="1"
+                android:lines="20"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical"
                 android:minHeight="48dp"
                 android:padding="5dp"
                 android:textColor="@color/white"
