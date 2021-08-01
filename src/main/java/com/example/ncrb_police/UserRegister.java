@@ -81,6 +81,11 @@ public class UserRegister extends AppCompatActivity {
                     number.requestFocus();
                     return;
                 }
+                if (e_number.length()<10){
+                    number.setError("Phone number must be valid");
+                    number.requestFocus();
+                    return;
+                }
                 if (e_area.isEmpty()){
                     area.setError("Locality is required");
                     area.requestFocus();

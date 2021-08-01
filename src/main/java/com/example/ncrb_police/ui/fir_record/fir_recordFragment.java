@@ -1,30 +1,70 @@
 package com.example.ncrb_police.ui.fir_record;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
+import com.example.ncrb_police.R;
 import com.example.ncrb_police.databinding.FragmentFirRecordBinding;
 
-public class fir_recordFragment extends Fragment {
+import java.util.Calendar;
+
+public class fir_recordFragment extends Fragment implements View.OnClickListener {
 
     private FragmentFirRecordBinding binding;
+    private int mHour, mMinute, mYear, mMonth, mDay;
+    String evidence;
+    EditText applicant_name,applicant_phone,applicant_email,suspect,time,date,address,statement;
+    Button set_time,set_date,submit;
+    Calendar c;
+    Switch ev;
+    TextView ev_pointer;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentFirRecordBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        View root = inflater.inflate(R.layout.fragment_fir_record,container,false);
 
-        final TextView textView = binding.header2;
+        final TextView textView = root.findViewById(R.id.header2);
+        ev_pointer = root.findViewById(R.id.ev_pointer);
+        //Edit Texts
+        applicant_name = root.findViewById(R.id.applicant);
+        applicant_phone = root.findViewById(R.id.applicant_phone);
+        applicant_email = root.findViewById(R.id.applicant_mail);
+        suspect = root.findViewById(R.id.suspect);
+        time = root.findViewById(R.id.time);
+        date = root.findViewById(R.id.date);
+        address = root.findViewById(R.id.add);
+        statement = root.findViewById(R.id.statement);
+
+        //Buttons
+        set_time = root.findViewById(R.id.set_time);
+        set_date = root.findViewById(R.id.set_date);
+        submit = root.findViewById(R.id.save_fir);
+
+        //Evidence Set-up with Switch
+        ev = root.findViewById(R.id.evidence_swap);
+
+        //On Click Listeners
+        set_time.setOnClickListener(this);
+        set_date.setOnClickListener(this);
+        submit.setOnClickListener(this);
+        ev.setOnClickListener(this);
+
+        c = Calendar.getInstance();
         return root;
     }
 
@@ -32,5 +72,113 @@ public class fir_recordFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        switch (id){
+            case R.id.set_time:
+                mHour = c.get(Calendar.HOUR_OF_DAY);
+                mMinute = c.get(Calendar.MINUTE);
+
+                //Time Picker Launch
+                TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int hour, int mins) {
+                        time.setText(hour + ":" + mins);
+                    }
+                },mHour, mMinute, true);
+                timePickerDialog.show();
+                break;
+
+            case R.id.set_date:
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        date.setText(day+"-"+(month+1)+"-"+year);
+                    }
+                },mDay, mMonth, mYear);
+                datePickerDialog.show();
+                break;
+
+            case  R.id.evidence_swap:
+                if (((Switch)view).isChecked()){
+                    ev_pointer.setVisibility(View.VISIBLE);
+                    evidence="Yes";
+                }
+                else {
+                    ev_pointer.setVisibility(View.GONE);
+                    evidence="No";
+                }
+                break;
+
+            case  R.id.save_fir:
+                save_new_fir();
+
+
+        }
+    }
+
+    private void save_new_fir() {
+        String a_name = applicant_name.getText().toString().trim();
+        String a_email = applicant_email.getText().toString().trim();
+        String a_phone = applicant_phone.getText().toString().trim();
+        String a_suspect = suspect.getText().toString().trim();
+        String a_time = time.getText().toString().trim();
+        String a_date = date.getText().toString().trim();
+        String a_area = address.getText().toString().trim();
+        String a_statement = statement.getText().toString().trim();
+        String a_ev_stat = evidence;
+
+        if (a_name.isEmpty()){
+            applicant_name.setError("Applicant Name is required");
+            applicant_name.requestFocus();
+            return;
+        }
+        if (a_email.isEmpty()){
+            applicant_email.setError("Applicant E-mail is required");
+            applicant_email.requestFocus();
+            return;
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(a_email).matches()){
+            applicant_email.setError("Valid E-mail is required");
+            applicant_email.requestFocus();
+            return;
+        }
+        if (a_phone.isEmpty()){
+            applicant_phone.setError("Applicant Phone No. is required");
+            applicant_phone.requestFocus();
+            return;
+        }
+        if (a_phone.length()<10){
+            applicant_phone.setError("Valid Phone No. is required");
+            applicant_phone.requestFocus();
+            return;
+        }
+        if (a_suspect.isEmpty()){
+            a_suspect = "No specified suspect";
+            return;
+        }
+        if (a_time.isEmpty()){
+            time.setError("Time of recording is required");
+            time.requestFocus();
+            return;
+        }
+        if (a_date.isEmpty()){
+            date.setError("Date of recording is required");
+            date.requestFocus();
+            return;
+        }
+        if (a_area.isEmpty()){
+            address.setError("Locality must be specified");
+            address.requestFocus();
+            return;
+        }
+        if (a_statement.isEmpty()){
+            statement.setError("Statement of the applicant is required");
+            statement.requestFocus();
+            return;
+        }
     }
 }

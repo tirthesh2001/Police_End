@@ -201,6 +201,34 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
+                <Switch
+                    android:id="@+id/evidence_swap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Evidence Available"
+                    android:layout_marginHorizontal="50dp"
+                    tools:ignore="UseSwitchCompatOrMaterialXml"
+                    android:background="@drawable/elements_red"
+                    android:layout_marginTop="50dp"
+                    android:textColor="@color/white"
+                    android:padding="15dp"
+                    android:ems="18"
+                    android:thumb="@drawable/thumb_style"
+                    android:textOff="No"
+                    android:textOn="Yes"
+                    android:track="@drawable/track_style"/>
+
+            <TextView
+                android:id="@+id/ev_pointer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Evidence should be submitted in person"
+                android:layout_marginHorizontal="50dp"
+                android:textColor="@color/green"
+                android:background="@color/shade3"
+                android:textStyle="bold"
+                android:visibility="invisible"/>
+
             <Button
                 android:id="@+id/save_fir"
                 android:layout_width="wrap_content"
