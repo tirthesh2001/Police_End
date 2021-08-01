@@ -13,12 +13,17 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.ncrb_police.FIR_info;
 import com.example.ncrb_police.R;
 import com.example.ncrb_police.databinding.FragmentFirRecordBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
@@ -29,7 +34,7 @@ public class fir_recordFragment extends Fragment implements View.OnClickListener
     String evidence;
     EditText applicant_name,applicant_phone,applicant_email,suspect,time,date,address,statement;
     Button set_time,set_date,submit;
-    Calendar c;
+    Calendar c,c1;
     Switch ev;
     TextView ev_pointer;
 
@@ -64,7 +69,6 @@ public class fir_recordFragment extends Fragment implements View.OnClickListener
         submit.setOnClickListener(this);
         ev.setOnClickListener(this);
 
-        c = Calendar.getInstance();
         return root;
     }
 
@@ -79,6 +83,7 @@ public class fir_recordFragment extends Fragment implements View.OnClickListener
         int id = view.getId();
         switch (id){
             case R.id.set_time:
+                c = Calendar.getInstance();
                 mHour = c.get(Calendar.HOUR_OF_DAY);
                 mMinute = c.get(Calendar.MINUTE);
 
@@ -93,6 +98,12 @@ public class fir_recordFragment extends Fragment implements View.OnClickListener
                 break;
 
             case R.id.set_date:
+                c1 = Calendar.getInstance();
+                mYear = c1.get(Calendar.YEAR);
+                mMonth = c1.get(Calendar.MONTH);
+                mDay = c1.get(Calendar.DAY_OF_MONTH);
+
+                //Date Picker Launch
                 DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -180,5 +191,16 @@ public class fir_recordFragment extends Fragment implements View.OnClickListener
             statement.requestFocus();
             return;
         }
+        FIR_info fir_info = new FIR_info(a_name,a_email,a_phone,a_suspect,a_time,a_date,a_area,a_statement,a_ev_stat);
+        FirebaseDatabase.getInstance().getReference().child("FIR Records").push().setValue(fir_info).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(getContext(), "FIR Registered", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

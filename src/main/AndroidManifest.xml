@@ -12,7 +12,7 @@
         <activity
             android:name=".Navigation_DriverActivity"
             android:label="@string/title_activity_navigation_driver"
-            android:theme="@style/Theme.NCRB_Police.NoActionBar"></activity>
+            android:theme="@style/Theme.NCRB_Police.NoActionBar" />
         <activity android:name=".UserRegister" />
         <activity android:name=".MainActivity" />
         <activity android:name=".PoliceLoginActivity" />
