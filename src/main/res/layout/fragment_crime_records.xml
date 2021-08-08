@@ -4,19 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/regular2"
     tools:context=".ui.crime_records.crime_recordsFragment">
 
-    <TextView
-        android:id="@+id/text_slideshow"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="75dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/elements_red"
+                android:gravity="center_horizontal"
+                android:text="Approved Cases"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_approved"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@drawable/regular2red_cropped" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/elements_red"
+                android:gravity="center_horizontal"
+                android:text="Commoner Cases"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_commoner"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@drawable/regular2red_cropped" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

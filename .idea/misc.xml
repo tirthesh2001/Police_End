@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/drawable/border_blue.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/drawable/border_white.xml" value="0.2203125" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/drawable/elements_red.xml" value="0.2203125" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/drawable/fir.xml" value="0.2169230769230769" />
@@ -10,10 +11,14 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/drawable/left_element.xml" value="0.2203125" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/drawable/thumb_style.xml" value="0.2203125" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/drawable/track_style.xml" value="0.2203125" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/layout/activity_approved_case.xml" value="0.22" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/layout/activity_file_upload.xml" value="0.17346014492753623" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/layout/activity_main.xml" value="0.18704710144927536" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/layout/activity_user_register.xml" value="0.14764492753623187" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/layout/app_bar_navigation_driver.xml" value="0.17798913043478262" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/layout/crime_case.xml" value="0.25" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/layout/fragment_beats.xml" value="0.25" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/layout/fragment_crime_records.xml" value="0.18" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/layout/fragment_fir_record.xml" value="0.25" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/layout/spinner_item.xml" value="0.182518115942029" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />

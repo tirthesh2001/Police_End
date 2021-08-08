@@ -192,7 +192,7 @@ public class fir_recordFragment extends Fragment implements View.OnClickListener
             return;
         }
         FIR_info fir_info = new FIR_info(a_name,a_email,a_phone,a_suspect,a_time,a_date,a_area,a_statement,a_ev_stat);
-        FirebaseDatabase.getInstance().getReference().child("FIR Records").push().setValue(fir_info).addOnCompleteListener(new OnCompleteListener<Void>() {
+        FirebaseDatabase.getInstance().getReference().child("Commoner Records").push().setValue(fir_info).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ncrb_police">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -9,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NCRB_Police">
+        <activity
+            android:name=".ApprovedCaseActivity"
+            android:exported="true" />
         <activity
             android:name=".Navigation_DriverActivity"
             android:label="@string/title_activity_navigation_driver"
