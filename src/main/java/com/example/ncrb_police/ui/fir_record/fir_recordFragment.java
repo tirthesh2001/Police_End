@@ -141,6 +141,7 @@ public class fir_recordFragment extends Fragment implements View.OnClickListener
         String a_area = address.getText().toString().trim();
         String a_statement = statement.getText().toString().trim();
         String a_ev_stat = evidence;
+        String a_status = "Approved";
 
         if (a_name.isEmpty()){
             applicant_name.setError("Applicant Name is required");
@@ -191,7 +192,7 @@ public class fir_recordFragment extends Fragment implements View.OnClickListener
             statement.requestFocus();
             return;
         }
-        FIR_info fir_info = new FIR_info(a_name,a_email,a_phone,a_suspect,a_time,a_date,a_area,a_statement,a_ev_stat);
+        FIR_info fir_info = new FIR_info(a_name,a_email,a_phone,a_suspect,a_time,a_date,a_area,a_statement,a_ev_stat,a_status);
         FirebaseDatabase.getInstance().getReference().child("Commoner Records").push().setValue(fir_info).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

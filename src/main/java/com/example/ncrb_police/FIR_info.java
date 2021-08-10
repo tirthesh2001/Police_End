@@ -1,8 +1,24 @@
 package com.example.ncrb_police;
 
 public class FIR_info {
-    String name,email,phone,suspect,time,date,area,statement,evid;
+    String name;
+    String email;
+    String phone;
+    String suspect;
+    String time;
+    String date;
+    String area;
+    String statement;
+    String evid;
+    String status;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
     public String getName() {
         return name;
     }
@@ -75,7 +91,7 @@ public class FIR_info {
         this.evid = evid;
     }
 
-    public FIR_info(String name, String email, String phone, String suspect, String time, String date, String area, String statement, String evid) {
+    public FIR_info(String name, String email, String phone, String suspect, String time, String date, String area, String statement, String evid, String status) {
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -85,6 +101,7 @@ public class FIR_info {
         this.area = area;
         this.statement = statement;
         this.evid = evid;
+        this.status = status;
     }
 
     public FIR_info() {

@@ -34,9 +34,11 @@ public class c_case_adapter extends FirebaseRecyclerAdapter<
         holder.lay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String send_txt = model.getName();
+                String send_txt1 = model.getStatement();
+                String send_txt2 = model.getStatus();
                 Intent i = new Intent(context, ApprovedCaseActivity.class);
-                i.putExtra("Name",send_txt);
+                i.putExtra("Statement",send_txt1);
+                i.putExtra("Choice",send_txt2);
                 context.startActivity(i);
             }
         });
