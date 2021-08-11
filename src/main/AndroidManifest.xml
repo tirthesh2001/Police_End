@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NCRB_Police">
         <activity
+            android:name=".ApproveAppointmentActivity"
+            android:exported="true" />
+        <activity
             android:name=".ApprovedCaseActivity"
             android:exported="true" />
         <activity

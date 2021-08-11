@@ -141,7 +141,7 @@ public class fir_recordFragment extends Fragment implements View.OnClickListener
         String a_area = address.getText().toString().trim();
         String a_statement = statement.getText().toString().trim();
         String a_ev_stat = evidence;
-        String a_status = "Approved";
+        String a_status = "Disapproved";
 
         if (a_name.isEmpty()){
             applicant_name.setError("Applicant Name is required");

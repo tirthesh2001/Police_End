@@ -7,7 +7,14 @@
     android:background="@drawable/regular2"
     tools:context=".ui.beats.beatsFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
     <TextView
         android:id="@+id/text_beats"
         android:layout_width="match_parent"
@@ -22,35 +29,31 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <TextView
         android:id="@+id/place"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="286dp"
-        android:layout_marginRight="286dp"
         android:text="Select the area:"
         android:textColor="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_beats" />
+        android:textSize="22sp" />
 
     <Spinner
         android:id="@+id/main_area"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="18dp"
         android:gravity="left"
         android:minHeight="48dp"
-        app:layout_constraintStart_toEndOf="@+id/place"
-        app:layout_constraintTop_toBottomOf="@+id/text_beats"
         android:contentDescription="Select a locality"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/set"
@@ -61,7 +64,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginBottom="521dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/gradiant_red"
         android:text="Set"
         android:textColor="@color/white"
@@ -69,6 +72,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_area" />
+
+
+
 
     <TableLayout
         android:layout_width="match_parent"
@@ -252,19 +258,26 @@
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:background="@drawable/elements_red"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
 
             <Button
                 android:id="@+id/print"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="75dp"
+                android:layout_gravity="center"
                 android:background="@drawable/gradiant_red"
                 android:padding="5dp"
                 android:text="Print"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/white" />
         </TableRow>
     </TableLayout>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
