@@ -114,7 +114,19 @@ public class ApprovedCaseActivity extends AppCompatActivity {
                             disapprove.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    ds.getRef().removeValue();
+                                    FIR_info put_data = new FIR_info(name.getText().toString(),email.getText().toString(),phone.getText().toString(),suspect.getText().toString(),
+                                            time.getText().toString(),date.getText().toString(),locality.getText().toString(),f_statement.getText().toString(),evidence_avl.getText().toString(),status);
+                                    FirebaseDatabase.getInstance().getReference("Disapproved Cases").push().setValue(put_data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()){
+                                                Toast.makeText(getApplicationContext(), "Success: Added new", Toast.LENGTH_SHORT).show();
+                                                ds.getRef().removeValue();
+                                            }else {
+                                                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
                                 }
                             });
                         }

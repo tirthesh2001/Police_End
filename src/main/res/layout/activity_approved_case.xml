@@ -92,7 +92,6 @@
                         android:layout_below="@+id/full_name"
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/textView15"
-                        android:text="Email address"
                         android:textColor="@color/t_b"
                         android:textSize="18sp" />
 
@@ -117,7 +116,6 @@
                         android:layout_below="@+id/email_add"
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/textView17"
-                        android:text="placeholder"
                         android:textColor="@color/t_b"
                         android:textSize="18sp" />
 
@@ -143,7 +141,6 @@
                         android:layout_below="@+id/phone_number"
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/textView18"
-                        android:text="placeholder"
                         android:textColor="@color/t_b"
                         android:textSize="18sp" />
 
@@ -168,7 +165,6 @@
                         android:layout_below="@+id/suspect_name"
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/textView19"
-                        android:text="placeholder"
                         android:textColor="@color/t_b"
                         android:textSize="18sp" />
 
@@ -193,7 +189,6 @@
                         android:layout_below="@+id/time_disp"
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/textView20"
-                        android:text="placeholder"
                         android:textColor="@color/t_b"
                         android:textSize="18sp" />
 
@@ -218,7 +213,6 @@
                         android:layout_below="@+id/date_disp"
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/textView21"
-                        android:text="placeholder"
                         android:textColor="@color/t_b"
                         android:textSize="18sp" />
 
@@ -245,7 +239,6 @@
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/textView22"
                         android:minLines="3"
-                        android:text="placeholder"
                         android:textColor="@color/t_b"
                         android:textSize="18sp" />
 
@@ -271,7 +264,6 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="50dp"
                         android:layout_toRightOf="@+id/textView23"
-                        android:text="placeholder"
                         android:textColor="@color/t_b"
                         android:textSize="18sp" />
 

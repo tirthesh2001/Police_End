@@ -9,6 +9,16 @@ public class Appoint {
     String user;
     String status;
 
+    public Appoint(String commoner_name, String commoner_no, String reason, String time, String date, String user, String status) {
+        this.commoner_name = commoner_name;
+        this.commoner_no = commoner_no;
+        this.reason = reason;
+        this.time = time;
+        this.date = date;
+        this.user = user;
+        this.status = status;
+    }
+
     public String getCommoner_name() {
         return commoner_name;
     }
