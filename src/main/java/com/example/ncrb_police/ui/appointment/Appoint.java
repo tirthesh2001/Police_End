@@ -1,4 +1,4 @@
-package com.example.ncrb_police;
+package com.example.ncrb_police.ui.appointment;
 
 public class Appoint {
     String commoner_name;
