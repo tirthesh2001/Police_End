@@ -34,6 +34,14 @@ public class UserRegister extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        // name=findViewById(R.id.u_name);
+        // password=findViewById(R.id.u_pass);
+        // number=findViewById(R.id.u_phone);
+        // area=findViewById(R.id.u_area);
+        // email=findViewById(R.id.u_email);
+        // l_name=findViewById(R.id.u_lname);
+        // regis=findViewById(R.id.Submit);
+
         name=findViewById(R.id.u_name);
         password=findViewById(R.id.u_pass);
         number=findViewById(R.id.u_phone);
